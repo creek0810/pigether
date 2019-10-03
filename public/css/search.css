@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+}
+.app {
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    top: 20%;
+    display: inline-flex;
+    justify-content: space-around;
+}
+.search-container {
+    width: 40%;
+}
+.result-container {
+    width: 50%;
+    overflow: auto;
+}
+.person {
+    width: calc(100% - 10px);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+.person .custom-text-info {
+    width: calc(80% - 15px);
+}
+.person .propic {
+    width: 20%;
+    height: 125.3px;
+}
