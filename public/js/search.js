@@ -2,15 +2,23 @@ const API = {
   "query": ""
 };
 function showResult(data) {
-  const result = data.reduce((acc, cur) => {
+  const result = data.reduce((acc, cur, idx) => {
     return `${acc}
-      <div class="person">
+      <div class="person-${idx % 2}">
         <img src="${cur.propic}" class="propic">
         <div class="custom-text-info">
-          <div class="name">${cur.name}</div>
-          <div class="skill">${cur.skill}</div>
-          <div class="grade">${cur.grade}</div>
-          <div class="score">${cur.score}</div>
+          <div class="text-info-row">
+            <div class="name">姓名: ${cur.name}</div>
+            <div class="score">評分: ${cur.score}</div>
+          </div>
+          <div class="text-info-row">
+            <div class="major">科系: ${cur.major}</div>
+            <div class="skill">技能: ${cur.skill}</div>
+          </div>
+          <div class="text-info-row">
+            <div class="grade">年級: ${cur.grade}</div>
+            <div class="gender">性別: ${cur.gender}</div>
+          </div>
         </div>
       </div>
     `

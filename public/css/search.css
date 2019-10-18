@@ -1,31 +1,72 @@
 html, body {
     height: 100%;
+    background: #F2F2F2;
 }
 .app {
     width: 100%;
-    height: 80%;
+    height: calc(100% - 6rem);
     position: absolute;
-    top: 20%;
+    top: 5rem;
     display: inline-flex;
     justify-content: space-around;
 }
 .search-container {
-    width: 40%;
+    background: white;
+    width: 30%;
+    height: 50%;
+    border-color: white;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 5px;
 }
 .result-container {
-    width: 50%;
+    background: white;
+    width: 60%;
     overflow: auto;
 }
-.person {
-    width: calc(100% - 10px);
+.person-0 {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: calc(100% - 20px);
     height: 200px;
     display: flex;
     justify-content: center;
+    background: #c9d99e;
 }
-.person .custom-text-info {
+.person-1 {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: calc(100% - 20px);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    background: #fae8c8;
+}
+.person-0 .custom-text-info, .person-1 .custom-text-info {
     width: calc(80% - 15px);
+    margin-top: 25px;
+    height: 150px;
 }
-.person .propic {
-    width: 20%;
-    height: 125.3px;
+.person-0 .propic, .person-1 .propic {
+    margin-top: 25px;
+    width: 150px;
+    height: 150px;
+}
+.name, .major, .skill, .gender, .score, .grade {
+    height: 100%;
+    width: 50%;
+}
+
+.text-info-row {
+    width: 100%;
+    height: calc(100% / 3);
+    display: inline-flex;
+}
+.btn-orange {
+    color: white;
+    background: #fda77f;
+}
+.btn-orange:hover {
+    color: white;
+    background: #faa077;
 }

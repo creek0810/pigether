@@ -57,9 +57,7 @@
                 </select>
             </div>
         </div>
-        <div class="form-group row">
-            <button class="btn btn-primary" id="submit">submit</button>
-        </div>
+        <button class="btn btn-orange float-right" id="submit">submit</button>
     </div>
     <div class="result-container" id="result-container">
 </div>
