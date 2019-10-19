@@ -5,11 +5,17 @@
 @section('header')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/search.css') }}" >
     <script src="{{ asset('js/search.js') }}"></script>
+    <script src="{{ asset('js/fetchData.js') }}"></script>
 @endsection
 
 @section('content')
 <div class="app">
     <div class="search-container">
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <button class="btn" id="hint-box">請輸入以下欄位進行查詢</button>
+            </div>
+        </div>
         <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">姓名: </label>
             <div class="col-sm-10">
@@ -20,7 +26,7 @@
             <label for="gender" class="col-sm-2 col-form-label">性別: </label>
             <div class="col-sm-10">
                 <select id="gender" class="form-control">
-                    <option value="all" selected>不限</option>
+                    <option value="" selected>不限</option>
                     <option value="male">男</option>
                     <option value="female">女</option>
                 </select>
@@ -36,7 +42,7 @@
             <label for="grade" class="col-sm-2 col-form-label">年級: </label>
             <div class="col-sm-10">
                 <select id="grade" class="form-control">
-                    <option value="all">不限</option>
+                    <option value="">不限</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

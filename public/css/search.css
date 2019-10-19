@@ -2,6 +2,13 @@ html, body {
     height: 100%;
     background: #F2F2F2;
 }
+a {
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
 .app {
     width: 100%;
     height: calc(100% - 6rem);
@@ -33,6 +40,9 @@ html, body {
     justify-content: center;
     background: #c9d99e;
 }
+.person-0:hover {
+    background: #bfd388;
+}
 .person-1 {
     margin-left: 10px;
     margin-bottom: 10px;
@@ -41,6 +51,9 @@ html, body {
     display: flex;
     justify-content: center;
     background: #fae8c8;
+}
+.person-1:hover {
+    background: #f1dbb3;
 }
 .person-0 .custom-text-info, .person-1 .custom-text-info {
     width: calc(80% - 15px);
@@ -68,5 +81,10 @@ html, body {
 }
 .btn-orange:hover {
     color: white;
-    background: #faa077;
+    background: #f89b6f;
+}
+#hint-box {
+    cursor: default;
+    color: white;
+    background: #445c3c;
 }

@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pigether/search', function() {
+Route::get('/search', function() {
     return view('search');
 });
