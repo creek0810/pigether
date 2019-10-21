@@ -1,0 +1,9 @@
+.work-container {
+    position: absolute;
+    left: 10px;
+    bottom: 1rem;
+    width: calc(100% - 20px);
+    height: calc(100% - 1rem);
+    border-radius: .5rem;
+    background: #c9d99e;
+}

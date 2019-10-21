@@ -1,0 +1,47 @@
+/*///////////////////////layout css//////////////////////*/
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+html, body {
+    height: 100%;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+.app {
+    position: absolute;
+    height: calc(100% - 6rem);
+    width: 100%;
+    top: 6rem;
+}
+/*/////////////////////component///////////////////////*/
+.btn-orange {
+    color: white;
+    background: #fda77f;
+}
+.btn-orange:hover {
+    color: white;
+    background: #f89b6f;
+}
+.btn-green {
+    color: white;
+    background: #445c3c;
+}
+.btn-green:hover {
+    color: white;
+    background: #395232;
+}
+
+.btn.div-orange {
+    cursor: default;
+    width: fit-content;
+    color: white;
+    background: #fda77f;
+}
+
+.btn.div-green {
+    cursor: default;
+    width: fit-content;
+    color: white;
+    background: #445c3c;
+}
+.title-div {
+    margin-left: 5px;
+    margin-top: 5px;
+}
