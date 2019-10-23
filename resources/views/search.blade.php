@@ -4,6 +4,7 @@
 
 @section('header')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/search.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" >
     <script src="{{ asset('js/search.js') }}"></script>
     <script src="{{ asset('js/fetchData.js') }}"></script>
 @endsection
