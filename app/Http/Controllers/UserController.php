@@ -37,9 +37,12 @@ class UserController extends Controller
                          ->when($grade, function($query) use ($grade) {
                             return $query->where("grade", $grade);
                          })
-                         ->with('skills', 'department')
+                         ->with('skills', 'departmentDetail')
                          ->get();
         foreach($users as $user) {
+            // departmentDetail replace department
+            // departmentDetail has ch and en name of department
+            $user->department = $user->departmentDetail;
             // convert image
             $user->propic = base64_encode( $user->propic);
         }

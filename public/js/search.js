@@ -25,7 +25,7 @@ function showResult(data) {
               <div class="score">評分: ${cur.score}</div>
             </div>
             <div class="text-info-row">
-              <div class="major">科系: ${cur.department.nameCH}</div>
+              <div class="major">科系: ${cur.department.name_ch}</div>
               <div class="skill">技能: ${skills}</div>
             </div>
             <div class="text-info-row">

@@ -11,7 +11,7 @@ class UserInfo extends Model
     public function skills() {
         return $this->hasMany('App\UserSkills', 'account', 'account');
     }
-    public function department() {
-        return $this->hasOne('App\Department', 'nameEN', 'department');
+    public function departmentDetail() {
+        return $this->hasOne('App\Department', 'name_en', 'department');
     }
 }
