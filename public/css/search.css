@@ -1,5 +1,4 @@
 html, body {
-    height: 100%;
     background: #F2F2F2;
 }
 a {
@@ -20,7 +19,7 @@ a:hover {
 .search-container {
     background: white;
     width: 30%;
-    height: 50%;
+    height: fit-content;
     border-color: white;
     border-style: solid;
     border-width: 10px;
@@ -30,6 +29,10 @@ a:hover {
     background: white;
     width: 60%;
     overflow: auto;
+    border-color: white;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 5px;
 }
 .person-0 {
     margin-left: 10px;
@@ -37,11 +40,21 @@ a:hover {
     width: calc(100% - 20px);
     height: 200px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     background: #c9d99e;
+    border-color: #c9d99e;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 5px;
+
 }
 .person-0:hover {
     background: #bfd388;
+    border-color: #bfd388;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 5px;
 }
 .person-1 {
     margin-left: 10px;
@@ -49,11 +62,20 @@ a:hover {
     width: calc(100% - 20px);
     height: 200px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     background: #fae8c8;
+    border-color: #fae8c8;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 5px;
 }
 .person-1:hover {
     background: #f1dbb3;
+    border-color: #f1dbb3;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 5px;
 }
 .person-0 .custom-text-info, .person-1 .custom-text-info {
     width: calc(80% - 15px);
@@ -61,9 +83,11 @@ a:hover {
     height: 150px;
 }
 .person-0 .propic, .person-1 .propic {
-    margin-top: 25px;
     width: 150px;
     height: 150px;
+}
+.custom-text-info {
+    width: calc(100% - 165px);
 }
 .name, .major, .skill, .gender, .score, .grade {
     height: 100%;
