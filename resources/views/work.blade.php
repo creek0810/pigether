@@ -12,13 +12,25 @@
 <div class="app">
     <div class="work-container">
         <div class="btn div-green title-div">
-            作品
+            <h2>
+                作品
+            </h2>
         </div>
         <div class="title-container">
-            題目: {{ $work['title'] }}
+            <h4>
+                題目: {{ $work['title'] }}
+            </h4>
         </div>
-        <div class="content-container"></div>
-        <div class="picture-container"></div>
+        <div class="content-container">
+            <h4>
+                內容: {{ $work['content'] }}
+            </h4>
+        </div>
+        <div class="picture-container">
+            @foreach($work['images'] as $image)
+                <img class="work-img" src="data:image/jpeg;base64,{{ $image['image'] }}">
+            @endforeach
+        </div>
     </div>
 </div>
 @endsection
