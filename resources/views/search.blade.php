@@ -36,7 +36,12 @@
         <div class="form-group row">
             <label for="major" class="col-sm-2 col-form-label">科系: </label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="major" >
+                <select id="major" class="form-control">
+                    <option value="" selected>不限</option>
+                    @foreach($departments as $department)
+                        <option value="{{ $department['name_en']}}">{{ $department['name_ch'] }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="form-group row">
