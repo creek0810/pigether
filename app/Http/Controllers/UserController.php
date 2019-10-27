@@ -19,7 +19,7 @@ class UserController extends Controller
         // url argument
         $name = $request->input('name', "");
         $gender = $request->input('gender', "");
-        $department = $request->input('dept', "");
+        $department = $request->input('department', "");
         $grade = $request->input('grade', "");
         $score = $request->input('score');
 
@@ -35,11 +35,26 @@ class UserController extends Controller
                             return $query->where("department", $department);
                          })
                          ->when($grade, function($query) use ($grade) {
-                            return $query->where("grade", $grade);
+                            if($grade == '5') {
+                                return $query->where("grade", '>=', $grade);
+                            } else {
+                                return $query->where("grade", $grade);
+                            }
                          })
-                         ->with('skills', 'department')
+                         ->with('skills', 'departmentDetail')
                          ->get();
         foreach($users as $user) {
+            // departmentDetail replace department
+            // departmentDetail has ch and en name of department
+            $user->department = $user->departmentDetail;
+            // translate gender to chinese
+            if($user->gender == 'female') {
+                $user->gender = "女";
+            } else if($user->gender == 'male') {
+                $user->gender = "男";
+            } else {
+                $user->gender = "未知";
+            }
             // convert image
             $user->propic = base64_encode( $user->propic);
         }
