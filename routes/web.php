@@ -1,5 +1,7 @@
 <?php
 
+use App\department;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/search', function() {
-    return view('search');
+    return view('search', ["departments" => Department::All()]);
 });
 
 Route::get('/user/{account}/work/{workID}', 'WorkController@index');
