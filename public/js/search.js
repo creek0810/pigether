@@ -1,21 +1,22 @@
 const API = {
-  "query": "http://127.0.0.1:8000/pigether/api/users"
+    "query": "http://127.0.0.1:8000/pigether/api/users"
 };
+
 function showResult(data) {
-  const result = data.reduce((acc, cur, idx) => {
-    // establish skill string
-    let skills = "";
-    for(let i=0; i<cur.skills.length && i<3; i++) {
-      if(i != 0) {
-        skills += '、';
-      }
-      skills += `${cur.skills[i].skill}`
-    }
-    if(cur.skills.length > 3) {
-      skills += '...';
-    }
-    // start establish personInfo div
-    return `${acc}
+    const result = data.reduce((acc, cur, idx) => {
+        // establish skill string
+        let skills = "";
+        for (let i = 0; i < cur.skills.length && i < 3; i++) {
+            if (i != 0) {
+                skills += '、';
+            }
+            skills += `${cur.skills[i].skill}`
+        }
+        if (cur.skills.length > 3) {
+            skills += '...';
+        }
+        // start establish personInfo div
+        return `${acc}
       <a href="/pigether/user/${cur.account}">
         <div class="person-${idx % 2}">
           <img src="data:image/jpeg;base64,${cur.propic}" class="propic">
@@ -36,40 +37,40 @@ function showResult(data) {
         </div>
       </a>
     `
-  }, "");
-  document.getElementById("result-container").innerHTML= result;
+    }, "");
+    document.getElementById("result-container").innerHTML = result;
 }
 
 function query() {
-  // get parameter
-  const parameter = {
-      name: document.getElementById("name").value,
-      gender: document.getElementById("gender").value,
-      department: document.getElementById("major").value,
-      grade: document.getElementById("grade").value,
-      score: document.getElementById("score").value
-  };
-  let queryArg = "";
-  Object.keys(parameter).map(cur => {
-    if(parameter[cur] !== "") {
-      if(queryArg === "") {
-        queryArg += `${cur}=${parameter[cur]}`;
-      } else {
-        queryArg += `&${cur}=${parameter[cur]}`;
-      }
-    }
-  });
+    // get parameter
+    const parameter = {
+        name: document.getElementById("name").value,
+        gender: document.getElementById("gender").value,
+        department: document.getElementById("major").value,
+        grade: document.getElementById("grade").value,
+        score: document.getElementById("score").value
+    };
+    let queryArg = "";
+    Object.keys(parameter).map(cur => {
+        if (parameter[cur] !== "") {
+            if (queryArg === "") {
+                queryArg += `${cur}=${parameter[cur]}`;
+            } else {
+                queryArg += `&${cur}=${parameter[cur]}`;
+            }
+        }
+    });
 
-  // establish query url
-  const url = `${API.query}?${queryArg}`;
-  return FetchData.getData(url);
+    // establish query url
+    const url = `${API.query}?${queryArg}`;
+    return FetchData.getData(url);
 }
 
 function init() {
-  document.getElementById("submit").addEventListener("click", async function() {
-    const result = await query();
-    showResult(result);
-  });
+    document.getElementById("submit").addEventListener("click", async function() {
+        const result = await query();
+        showResult(result);
+    });
 }
 
 window.addEventListener("load", init);
