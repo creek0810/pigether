@@ -21,6 +21,7 @@ Route::get('/search', function() {
     return view('search', ["departments" => Department::All()]);
 });
 
+
 Route::get('/user/{account}/work/{workID}', 'WorkController@index');
 
 Route::get('/signUp', function() {
