@@ -14,7 +14,7 @@ use App\department;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pigether');
 });
 
 Route::get('/search', function() {
