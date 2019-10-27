@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/search', function() {
     return view('search', ["departments" => Department::All()]);
 });
+
+Route::get('/signUp', function() {
+    return view('signUp');
+});
+
+Route::get('/signIn', function() {
+    return view('signIn');
+});
