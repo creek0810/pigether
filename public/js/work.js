@@ -15,14 +15,13 @@ function init() {
     workImage = [...document.getElementsByClassName("work-img")];
     showImage();
     // add event listener
-    document.getElementById('next-img').addEventListener('click', function () { 
-        console.log(workImage);
+    document.getElementById('next-img').addEventListener('click', function () {
         slideIndex = (slideIndex + 1) % workImage.length;
         showImage();
     });
-    document.getElementById('pre-img').addEventListener('click', function () { 
+    document.getElementById('pre-img').addEventListener('click', function () {
         slideIndex = (slideIndex - 1 + workImage.length) % workImage.length;
         showImage();
     });
 }
-//window.addEventListener('load', init);
+window.addEventListener('load', init);

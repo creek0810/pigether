@@ -16,6 +16,8 @@ class WorkController extends Controller
         foreach($work['images'] as $image) {
             $image['image'] = base64_encode($image['image']);
         }
+        $line = array("\r\n", "\n", "\r");
+        $work->content = str_replace($line, '<br>', $work->content);
         return view('work', ['work' => $work]);
     }
 }
