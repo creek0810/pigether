@@ -22,3 +22,12 @@ Route::get('/search', function() {
 });
 
 Route::get('/user/{account}/work/{workID}', 'WorkController@index');
+
+Route::get('/signUp', function() {
+    return view('signUp');
+});
+
+Route::get('/signIn', function() {
+    return view('signIn');
+});
+
