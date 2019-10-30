@@ -71,6 +71,21 @@
 					</div>
 					
 					<div class="form-group row">
+						<label for="department" class="col-md-6 col-form-label">{{ __('科系:') }}</label>
+					</div>
+					
+					<div class="form-group row">
+						<div class="col-md-6">
+							<select id="major" class="form-control" name="department" required autocomplete="department">
+								<option value="" selected></option>
+									@foreach($departments as $department)
+										<option value="{{ $department['name_en']}}">{{ $department['name_ch'] }}</option>
+									@endforeach
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group row">
 						<label for="email" class="col-md-6 col-form-label">{{ __('信箱:') }}</label>
 					</div>
 					
