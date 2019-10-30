@@ -28,4 +28,7 @@ Route::get('/signUp', function() {
 Route::get('/signIn', function() {
     return view('signIn');
 });
+
 Route::get('/home', 'HomeController@index');
+Route::get('/user/{account}/work/{workID}', 'WorkController@index');
+
