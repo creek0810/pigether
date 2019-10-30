@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('/search', function() {
     return view('search', ["departments" => Department::All()]);
 });
-
+Auth::routes();
 Route::get('/signUp', function() {
     return view('signUp');
 });
@@ -28,3 +28,4 @@ Route::get('/signUp', function() {
 Route::get('/signIn', function() {
     return view('signIn');
 });
+Route::get('/home', 'HomeController@index');

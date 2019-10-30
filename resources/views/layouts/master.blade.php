@@ -33,7 +33,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="/pigether/logOut">登出</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{Auth::user()->name}}
                         </a>
@@ -47,7 +47,7 @@
                         <a class="nav-link" href="/pigether/signIn">登入</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pigether/signOut">註冊</a>
+                        <a class="nav-link" href="/pigether/signUp">註冊</a>
                     </li>
                     @endif
                 </ul>
