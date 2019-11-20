@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
 			//$table->Binary('propic')->nullable();
 			$table->integer('score')->nullable();
 			$table->timestamps();
-		});
+        });
 		
 		DB::statement("ALTER TABLE `users` ADD `propic`  MEDIUMBLOB");
     }

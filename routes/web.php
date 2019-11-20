@@ -21,4 +21,28 @@ Route::get('/search', function() {
     return view('search', ["departments" => Department::All()]);
 });
 
+
 Route::get('/user/{account}/work/{workID}', 'WorkController@index');
+
+Auth::routes();
+
+Route::get('/signUp', function() {
+    return view('signUp', ["departments" => Department::All()]);
+});
+
+Route::get('/signIn', function() {
+    return view('signIn');
+});
+
+Route::get('/logOut', function(){
+	if(Auth::check()) {
+		Auth::logout();
+	}
+    return redirect('/pigether');
+});
+
+Route::get('/home', 'HomeController@index');
+
+
+
+
