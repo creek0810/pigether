@@ -6,8 +6,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('css/userInfo.css') }}" >
     <script src="https://kit.fontawesome.com/ecddf4d37d.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/userInfo.js') }}"></script>
-    <script src="{{ asset('js/fetchData.js') }}"></script>
 @endsection
 
 @section('content')
@@ -82,16 +80,18 @@
     </div>
     @if (Auth::check())
     <div class="comment-form">
-        <form action="">
+        <form action="{{ url('/pigether/review')}}" method="post">
+            {{ csrf_field() }}
+            <input type="text" value="{{ $info['account'] }}" name="account" class="hidden">
             <div class="form-inline form-group">
-                <label for="comment-score">請選擇評分</label>
-                <input type="number" class="form-control mx-sm-3" id="comment-score" max="5" min="1">
+                <label for="score">請選擇評分</label>
+                <input type="number" name="score" class="form-control mx-sm-3" id="score" max="5" min="1">
             </div>
             <div class="form-inline form-group">
-                <label for="comment-score">請輸入內容</label>
-                <textarea id="comment-text" class="form-control mx-sm-3" rows="3"></textarea>
+                <label for="content">請輸入內容</label>
+                <textarea id="content" name="content" class="form-control mx-sm-3" rows="3"></textarea>
             </div>
-            <button class="btn btn-orange" id="add-comment">新增評論</button>
+            <button type="submit" class="btn btn-orange" id="add-comment">新增評論</button>
         </form>
     </div>
     @endif

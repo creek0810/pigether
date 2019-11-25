@@ -47,3 +47,4 @@ Route::get('/user/{account}', 'UserController@index');
 
 
 
+Route::post('/review', 'CommentController@add');

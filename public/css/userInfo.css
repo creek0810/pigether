@@ -82,17 +82,20 @@
 .comment-container {
     margin-top: 10px;
     height: calc(60% - 180px - 1rem);
-    width: width;
+    width: 100%;
     background: #F2F2F2;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 5px;
+    padding: 10px;
 }
 .comment-container > .scroll-container {
     width: 100%;
+    height: 100%;
+    overflow: auto;
 }
 .comment-0 {
+    border-radius: 5px;
     padding: 5px;
     display: relative;
     width: 100%;
@@ -100,6 +103,7 @@
     background: #fae8c8;
 }
 .comment-1 {
+    border-radius: 5px;
     padding: 5px;
     display: relative;
     width: 100%;
@@ -124,11 +128,6 @@
     margin-left: 5px;
 }
 /*//////////////////////component///////////////////////*/
-.scroll-container{
-    height: 100%;
-    overflow: auto;
-    width: calc(100% - 10px);
-    margin-left: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+.hidden {
+    display: none;
 }
