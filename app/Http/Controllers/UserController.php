@@ -67,9 +67,27 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($account)
     {
-        //
+         $info = UserInfo::with('skills', 'departmentDetail', 'works', 'personality')
+                        ->where('account', $account)
+                        ->first();
+        // convert image
+        $info->propic = base64_encode($info->propic);
+        $info->department = $info->departmentDetail;
+        if($info->gender == 'female') {
+            $info->gender = "女";
+        } else if($info->gender == 'male') {
+            $info->gender = "男";
+        } else {
+            $info->gender = "未知";
+        }
+        // deal with new line
+        foreach($info['comments'] as $comment) {
+            $line = array("\r\n", "\n", "\r");
+            $comment->content = str_replace($line, '<br>', $comment->content);
+        }
+        return view('userInfo', ['info' => $info]);
     }
 }
 
