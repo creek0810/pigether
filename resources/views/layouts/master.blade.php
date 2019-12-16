@@ -37,22 +37,125 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{Auth::user()->name}}
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/pigether/user/{{Auth::user()->account}}">查看個人資料</a>
                             <a class="dropdown-item" href="/pigether/user/{{Auth::user()->account}}/editInfo">修改個人資料</a>
                         </div>
                     </li>
                     @else
                     <li class="nav-item">
-                        <a class="nav-link" href="/pigether/signIn">登入</a>
+                        <a class="nav-link" href="#login-modal" data-toggle="modal">登入</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pigether/signUp">註冊</a>
+                        <a class="nav-link" href="#register-modal" data-toggle="modal">註冊</a>
                     </li>
                     @endif
                 </ul>
             </div>
         </nav>
+
+        @unless (Auth::check())
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">登入</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="login-form" method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <div class="form-group">
+                            <label for="login-user-name" class="col-form-label">{{ __('帳號:') }}</label>
+                            <input id="account" type="text" class="form-control @error('account') is-invalid @enderror" name="account" value="{{ old('account') }}" required autocomplete="account" autofocus>
+                            @error('account')
+                                <small>{{ $message }}</small>
+                            @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-form-label">{{ __('密碼:') }}</label>
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                @error('password')
+                                    <small>{{ $message }}</small>
+                                @enderror
+                            </div>
+                            <button type="submit" class="btn btn-orange">登入</button>
+                        </form>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="register-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">註冊</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="register-form" method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <div class="form-group">
+                                <label for="account" class="col-form-label">{{ __('帳號:') }}</label>
+                                <input id="account" type="text" class="form-control @error('account') is-invalid @enderror" name="account" value="{{ old('account') }}" required autocomplete="account" autofocus>
+
+                                @error('account')
+                                <small>{{ $message }}</small>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-form-label">{{ __('密碼:') }}</label>
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                @error('password')
+                                <small>{{ $message }}</small>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="password-confirm" class="col-form-label">{{ __('再輸入一次密碼:') }}</label>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name" class="col-form-label">{{ __('姓名:') }}</label>
+                                <input id="name" type="text" class="form-control" name="name" required autocomplete="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="department" class="col-form-label">{{ __('科系:') }}</label>
+                                <select id="major" class="form-control" name="department" required autocomplete="department">
+                                <option value="" selected></option>
+                                    @foreach($departments as $department)
+                                    <option value="{{ $department['name_en']}}">{{ $department['name_ch'] }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="col-form-label">{{ __('信箱:') }}</label>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <small>{{ $message }}</small>
+                                @enderror
+                            </div>
+                            <button type="submit" class="btn btn-orange">註冊</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endunless
+
+
+
+
         <div class="container-fluid">
             @yield('content')
         </div>
