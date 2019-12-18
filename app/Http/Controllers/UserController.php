@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\UserInfo;
+use App\department;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -87,7 +88,7 @@ class UserController extends Controller
             $line = array("\r\n", "\n", "\r");
             $comment->content = str_replace($line, '<br>', $comment->content);
         }
-        return view('userInfo', ['info' => $info]);
+        return view('userInfo', ['info' => $info, "departments" => Department::All()]);
     }
 }
 

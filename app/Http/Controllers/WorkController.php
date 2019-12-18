@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Works;
+use App\department;
 
 use Illuminate\Http\Request;
 
@@ -18,6 +19,6 @@ class WorkController extends Controller
         }
         $line = array("\r\n", "\n", "\r");
         $work->content = str_replace($line, '<br>', $work->content);
-        return view('work', ['work' => $work]);
+        return view('work', ['work' => $work, "departments" => Department::All()]);
     }
 }

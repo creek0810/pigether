@@ -22,7 +22,7 @@ Route::get('/search', function() {
 });
 
 
-Route::get('/user/{account}/work/{workID}', 'WorkController@index');
+Route::get('/user/{account}/works/{workID}', 'WorkController@index');
 
 Auth::routes();
 
@@ -36,7 +36,5 @@ Route::get('/logOut', function(){
 Route::get('/home', 'HomeController@index');
 
 Route::get('/user/{account}', 'UserController@index');
-
-
 
 Route::post('/review', 'CommentController@add');
