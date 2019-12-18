@@ -5,18 +5,11 @@
     align-items: center;
 }
 .propic {
-    top: 10px;
-    left: 10px;
     height: 160px;
     width: 160px;
 }
 .custom-text-info {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    margin-left: 5px;
+    padding: 5px;
 }
 .name {
     font-size: 20px;
@@ -51,9 +44,8 @@
     border-radius: .25rem;
 }
 .personality-container {
+    margin-top: 10px;
     padding: 5px;
-    display: flex;
-    flex-direction: column;
     height: calc(50% - 5px);
     width: 100%;
     background: #fae8c8;
@@ -61,12 +53,9 @@
 }
 .works-container {
     padding: 5px;
-    width: calc(50% - 5px);
     height: 100%;
     background: #c9d99e;
     border-radius: .25rem;
-    display: flex;
-    flex-direction: column;
 }
 .contact-container {
     display: flex;
@@ -130,4 +119,9 @@
 /*//////////////////////component///////////////////////*/
 .hidden {
     display: none;
+}
+.padding-10 {
+    padding: 10px;
+
+
 }
