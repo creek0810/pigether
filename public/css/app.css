@@ -1,14 +1,7 @@
 /*///////////////////////layout css//////////////////////*/
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 html, body {
-    height: 100%;
     font-family: 'Noto Sans TC', sans-serif;
-}
-.app {
-    position: absolute;
-    height: calc(100% - 7rem);
-    width: 100%;
-    top: 6rem;
 }
 /*/////////////////////component///////////////////////*/
 .btn-orange {

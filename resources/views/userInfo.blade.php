@@ -9,10 +9,12 @@
 @endsection
 
 @section('content')
-<div class="content">
-    <div class="general-info">
-        <img src="data:image/jpeg;base64,{{ $info['propic'] }}" class="propic">
-        <div class="custom-text-info">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-2 d-flex">
+            <img src="data:image/jpeg;base64,{{ $info['propic'] }}" class="propic">
+        </div>
+        <div class="col-12 col-md-10 custom-text-info flex-grow-1">
             <div class="name">姓名: {{ $info["name"] }}</div>
             <div class="score">性別: {{ $info['gender'] }}</div>
             <div class="dept">科系: {{ $info['departmentDetail']['name_ch'] }} </div>
@@ -30,9 +32,10 @@
             <div class="gender"></div>
             <div class="score"></div>
         </div>
+        
     </div>
-    <div class="detail-info">
-        <div class="left-container">
+    <div class="row">
+        <div class="col-12 col-md-6 padding-10">
             <div class="skills-container">
                 <button class="btn div-orange">技能</button>
                 <div class='scroll-container'>
@@ -42,7 +45,9 @@
                 </div>
             </div>
             <div class="personality-container">
-                <button class="btn div-orange">個性</button>
+                <div>
+                    <button class="btn div-orange">個性</button>
+                </div>
                 <div class="scroll-container">
                     @foreach($info['personality'] as $personality)
                         <div>{{ $personality['personality'] }}</div>
@@ -50,14 +55,16 @@
                 </div>
             </div>
         </div>
-        <div class="works-container">
-            <button class="btn div-green">歷年作品</button>
-            <div class="scroll-container">
-                @foreach($info['works'] as $work)
-                    <div>
-                        <a href="/pigether/user/{{$work['account']}}/works/{{$work['id']}}">{{ $work['title'] }}</a>
-                    </div>
-                @endforeach
+        <div class="col-12 col-md-6 padding-10">
+            <div class="col works-container">
+                <button class="btn div-green">歷年作品</button>
+                <div class="scroll-container">
+                    @foreach($info['works'] as $work)
+                        <div>
+                            <a href="/pigether/user/{{$work['account']}}/works/{{$work['id']}}">{{ $work['title'] }}</a>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

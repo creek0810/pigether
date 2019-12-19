@@ -22,17 +22,9 @@ Route::get('/search', function() {
 });
 
 
-Route::get('/user/{account}/work/{workID}', 'WorkController@index');
+Route::get('/user/{account}/works/{workID}', 'WorkController@index');
 
 Auth::routes();
-
-Route::get('/signUp', function() {
-    return view('signUp', ["departments" => Department::All()]);
-});
-
-Route::get('/signIn', function() {
-    return view('signIn');
-});
 
 Route::get('/logOut', function(){
 	if(Auth::check()) {
@@ -44,7 +36,5 @@ Route::get('/logOut', function(){
 Route::get('/home', 'HomeController@index');
 
 Route::get('/user/{account}', 'UserController@index');
-
-
 
 Route::post('/review', 'CommentController@add');
