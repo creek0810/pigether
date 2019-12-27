@@ -34,7 +34,7 @@
         }
     }
 ?>		
-<form action = "/pigether/user/updateInfo" method = "post" enctype="multipart/form-data">
+<form action = "/pigether/updateInfo" method = "post" enctype="multipart/form-data">
 {{ csrf_field() }}
     <div class="app">
         <div class="col-md-5">

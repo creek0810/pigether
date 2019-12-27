@@ -53,21 +53,19 @@
                 <label for="works" class="col-sm-2 col-form-label">作品集: </label>
                 <div class="col-sm-10">
                     <div class="form-group row">
-                        <div style="position: relative">
                         @foreach($work['images'] as $image)
+                        <div style="position: relative">
                             <div class="col-md-2">
-                                <div style="position: absolute">
-                                    <form action="/pigether/deleteWork" id="form1" method="get">
-                                        <input type="hidden" name="account" value="{{ $work['account'] }}">
-                                        <input type="hidden" name="id" value="{{ $work['id'] }}">
-                                        <img class="work-img" src="data:image/jpeg;base64,{{ $image['image'] }}">
-                                        <input type="hidden" name="imageno" value="{{ $image['id'] }}">          
-                                        <button class="btn btn-orange btn-default" style="padding: 0; position: absolute; top: 1px; right: 1px">X</button>
-                                    </form>
-                                </div>
-                            </div>    
-                        @endforeach
+                                <form action="/pigether/deleteWork" id="form1" method="get">
+                                    <input type="hidden" name="account" value="{{ $work['account'] }}">
+                                    <input type="hidden" name="id" value="{{ $work['id'] }}">
+                                    <img class="work-img" src="data:image/jpeg;base64,{{ $image['image'] }}">
+                                    <input type="hidden" name="imageno" value="{{ $image['id'] }}">          
+                                    <button class="btn btn-orange btn-default" style="padding: 0; position: absolute; top: 0px; left: 1px">&nbspX&nbsp</button>
+                                </form>
+                            </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
