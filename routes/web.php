@@ -13,14 +13,17 @@ use App\department;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PostsController@index');
+
+Route::Post('/newPost', 'PostsController@create');
+
+Route::Post('/editPost', 'PostsController@edit');
+
+Route::Post('/deletePost', 'PostsController@delete');
 
 Route::get('/search', function() {
     return view('search', ["departments" => Department::All()]);
 });
-
 
 Route::get('/user/{account}/works/{workID}', 'WorkController@index');
 
