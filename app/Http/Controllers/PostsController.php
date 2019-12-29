@@ -21,7 +21,7 @@ class PostsController extends Controller
     public function index()
     {
         /* Get the post data */
-        $postDatas = Post::get();
+        $postDatas = Post::orderBy('updated_at','desc')->get();
         foreach ($postDatas as $post) {
             $tarUser = User::where('account', $post->account)
                 ->get();

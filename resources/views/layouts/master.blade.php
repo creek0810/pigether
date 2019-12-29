@@ -23,13 +23,20 @@
                     <a href="/pigether/search" class="nav-link">搜尋隊友</a>
                 </li>
                 <li class="nav-item">
+                    @if(URL::current() == url('/pigether'))
                     <a href="#" class="nav-link" id="post-btn">發帖子</a>
+                    @else
+                    <a href="/pigether" class="nav-link" id="post-btn">發帖子</a>
+                    @endif
                 </li>
             </ul>
+            @if(URL::current() == url('/pigether'))
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="搜尋帖子" aria-label="Search" id="post-search-content">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="post-search">搜尋</button>
             </form>
+            @endif
+
             <ul class="navbar-nav ml-auto">
                 @if (Auth::check())
                 <li class="nav-item dropdown">

@@ -21,10 +21,10 @@
                     <div class="col-sm-8">
                         <button class="btn" id="hint-box" onclick="return false;">歷年作品</button>
                     </div>
-                    <div class="col-sm-4">
-                        <label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                    <div class="col-sm-4 d-flex justify-content-end">
                         <button class="btn btn-orange" id="delete-btn">刪除該歷年作品</button>
-                        <button class="btn btn-orange float-right" id="submit-btn">確認修改</button>
+                        <div>&nbsp</div>
+                        <button class="btn btn-orange" id="submit-btn">確認修改</button>
                         <input type="hidden" id="select-work" name="select-work" value="0">
                     </div>
                 </div>

@@ -8,6 +8,12 @@
 @endsection
 
 @section('content')
+@if($info['account'] != (Auth::user()->account))
+    @php
+        header("Location: " . URL::to('/pigether'), true, 302);
+        exit();
+    @endphp
+@endif
 <?php
     $crypted = $info["password"];
     $msg = "";
@@ -241,8 +247,7 @@
         </form>
     </div>
 </div>
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-sm">
+<div class="modal fade bd-example-modal-lg" id="myModal" role="dialog" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">    <div class="modal-dialog modal-lg">
         <form action = "/pigether/newWork" method = "post" enctype="multipart/form-data">
         {{ csrf_field() }}
             <div class="modal-content">

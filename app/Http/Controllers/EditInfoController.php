@@ -38,6 +38,7 @@ class EditInfoController extends Controller
     
     public function update(Request $request) 
     {
+        
         $info["skill"] = UserSkills::where('account', $request->input("account"))
                                     ->delete();
 

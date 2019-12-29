@@ -130,11 +130,11 @@ async function init() {
 
     /* ----listener for post search---- */
     document.getElementById('post-search-content').addEventListener('keypress',
-        function(event) {
-            if (event.which == 13) {
-                searchByTitle();
+        (event) => {
+            if (event.key === "Enter") {
+                searchByTitle(posts);
+                event.preventDefault();
             }
-            event.preventDefault();
         });
     document.getElementById('post-search').addEventListener('click', function() { searchByTitle(posts) });
 
