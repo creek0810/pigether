@@ -1,5 +1,5 @@
 const API = {
-  "query": "http://127.0.0.1:8000/pigether/api/users"
+  "query": "http://140.121.197.197:6778/pigether/api/users"
 };
 function showResult(data) {
   const result = data.reduce((acc, cur, idx) => {

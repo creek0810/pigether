@@ -1,6 +1,6 @@
 const POST_API = {
-    "getPost": "http://127.0.0.1:8000/pigether/api/getPost",
-    "getOwner": "http://127.0.0.1:8000/pigether/api/getOwnerByPostId"
+    "getPost": "http://140.121.197.197:6778/pigether/api/getPost",
+    "getOwner": "http://140.121.197.197:6778/pigether/api/getOwnerByPostId"
 };
 /* ----Change the modal into edit style */
 function editPost() {
